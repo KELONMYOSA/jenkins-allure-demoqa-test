@@ -8,7 +8,7 @@ repositories {
 }
 
 def junitVersion = "5.8.2",
-    selenideVersion = "6.3.3",
+    selenideVersion = "6.3.4",
     allureVersion = "2.17.3"
 
 compileTestJava {
@@ -21,7 +21,9 @@ dependencies {
             "io.qameta.allure:allure-selenide:$allureVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion"
     )
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+    testRuntimeOnly(
+            "org.junit.jupiter:junit-jupiter-engine:$junitVersion",
+            "org.slf4j:slf4j-simple:1.7.36")
 }
 
 allure {

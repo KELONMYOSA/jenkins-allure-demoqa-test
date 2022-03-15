@@ -1,6 +1,7 @@
 package helpers;
 
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -8,7 +9,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
@@ -19,9 +19,9 @@ public class Attach {
         return message;
     }
 
-    @Attachment(value = "Page source", type = "text/plain")
-    public static byte[] pageSource() {
-        return getWebDriver().getPageSource().getBytes(StandardCharsets.UTF_8);
+    @Attachment(value = "Page source", type = "text/html", fileExtension = "html")
+    public static String pageSource() {
+        return WebDriverRunner.source();
     }
 
     @Attachment(value = "{attachName}", type = "image/png")
