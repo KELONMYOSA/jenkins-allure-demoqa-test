@@ -46,7 +46,7 @@ public class RegistrationTest extends TestBase {
             $(byText("Sports")).click();
         });
 
-        step("Загружаем картинку", () -> $("#uploadPicture").uploadFromClasspath("test-pic.jpg"));
+        //step("Загружаем картинку", () -> $("#uploadPicture").uploadFromClasspath("test-pic.jpg"));
 
         step("Выбираем штат и город", () -> {
             $("#state").click();
@@ -66,7 +66,7 @@ public class RegistrationTest extends TestBase {
                     text("01 January,2000"),
                     text("Maths"),
                     text("Sports"),
-                    text("test-pic.jpg"),
+                    //text("test-pic.jpg"),
                     text("Ulica, dom 1"),
                     text("NCR Delhi")
             );
